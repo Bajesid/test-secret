@@ -1,0 +1,15 @@
+---
+name: Test secret
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    env:
+      key1: ${{secrets.SECRET}}
+    runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v2
+  - run: echo SECRET
+    if: ${{secrets.SECRET}} == 'test value'
