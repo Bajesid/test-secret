@@ -2,7 +2,9 @@
 name: Test secret
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
