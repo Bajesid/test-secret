@@ -9,9 +9,9 @@ on:
 jobs:
   build:
     env:
-      key1: ${{ secrets.SECRET }}
+      my_secret: ${{ secrets.SECRET }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - run: echo SECRET
-      if: ${{ secrets.SECRET }} == 'test value'
+      if: $my_secret == 'test value'
